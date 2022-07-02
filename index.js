@@ -13,7 +13,7 @@
  */
 
 var debug = require('debug')('router')
-var flatten = require('array-flatten').flatten
+var flatten = require('./lib/flatten')
 var Layer = require('./lib/layer')
 var methods = require('methods')
 var mixin = require('utils-merge')
@@ -272,7 +272,6 @@ Router.prototype.handle = function handle(req, res, callback) {
       // don't even bother matching route
       if (!has_method && method !== 'HEAD') {
         match = false
-        continue
       }
     }
 
