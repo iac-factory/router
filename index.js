@@ -16,7 +16,6 @@ var debug = require('debug')('router')
 var flatten = require('./lib/flatten')
 var Layer = require('./lib/layer')
 var methods = require('methods')
-// var mixin = require('utils-merge')
 
 /***
  * Merge params with parent params
@@ -33,11 +32,9 @@ const mixin = function(a, b){
   return a;
 };
 
-// export default Merge;
-
 var parseUrl = require('parseurl')
 var Route = require('./lib/route')
-var setPrototypeOf = require('setprototypeof')
+// var setPrototypeOf = require('setprototypeof')
 
 /**
  * Module variables.
@@ -82,8 +79,9 @@ function Router(options) {
     router.handle(req, res, next)
   }
 
+  Object.setPrototypeOf(router, this);
   // inherit from the correct prototype
-  setPrototypeOf(router, this)
+  // setPrototypeOf(router, this)
 
   router.caseSensitive = opts.caseSensitive
   router.mergeParams = opts.mergeParams
