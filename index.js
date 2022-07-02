@@ -15,7 +15,7 @@
 var debug = require('debug')('router')
 var flatten = require('./lib/flatten')
 var Layer = require('./lib/layer')
-var methods = require('methods')
+var methods = require('./lib/methods')
 
 /***
  * Merge params with parent params
@@ -32,7 +32,7 @@ const mixin = function(a, b){
   return a;
 };
 
-var parseUrl = require('parseurl')
+var parseUrl = require('./lib/parse-url')
 var Route = require('./lib/route')
 // var setPrototypeOf = require('setprototypeof')
 
