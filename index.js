@@ -16,7 +16,25 @@ var debug = require('debug')('router')
 var flatten = require('./lib/flatten')
 var Layer = require('./lib/layer')
 var methods = require('methods')
-var mixin = require('utils-merge')
+// var mixin = require('utils-merge')
+
+/***
+ * Merge params with parent params
+ * @param a {object}
+ * @param b {object|undefined}
+ *
+ */
+const mixin = function(a, b){
+  if (a && b) {
+    for (var key in b) {
+      a[key] = b[key];
+    }
+  }
+  return a;
+};
+
+// export default Merge;
+
 var parseUrl = require('parseurl')
 var Route = require('./lib/route')
 var setPrototypeOf = require('setprototypeof')
