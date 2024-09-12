@@ -4,7 +4,7 @@
     "version": "0.7.1",
     "dependencies": {
         "debug": "4.3.4",
-        "path-to-regexp": "6.2.1"
+        "path-to-regexp": "6.3.0"
     },
     "devDependencies": {
         "after": "0.8.2",
